@@ -21,15 +21,16 @@ print(HERE)
 audio_bytes = audio_recorder()
 
 if audio_bytes:
- 	st.audio(audio_bytes, format="audio/wav")
+    st.audio(audio_bytes, format="audio/wav")
 
- 	with open('myfile.wav', mode='bw') as f:
- 		f.write(audio_bytes)
-   path = f"{HERE}\\myfile.wav"
-   st.write(path)
+    with open('myfile.wav', mode='bw') as f:
+        f.write(audio_bytes)
+    
+    path = f"{HERE}\\myfile.wav"
+    st.write(path)
   
-  out = model.transcribe(path)
-  st.write(out['text'])
+    out = model.transcribe(path)
+    st.write(out['text'])
 
 audio = st.file_uploader("Upload an audio file", type=["wav"])
 
