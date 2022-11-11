@@ -25,7 +25,7 @@ if len(audio) > 0:
     st.audio(audio)
 
     # To save audio to a file:
-    wav_file = open("myfile.wav", "wb")
+    wav_file = open(f"{HERE}/myfile.wav", "wb")
     wav_file.write(audio.tobytes())
 
     path = f"{HERE}/myfile.wav"
