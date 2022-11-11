@@ -20,7 +20,7 @@ print(HERE)
 
 audio = audiorecorder("Click to record", "Recording...")
 
-if audio_bytes:
+if audio:
 
     if len(audio) > 0:
         # To play audio in frontend:
