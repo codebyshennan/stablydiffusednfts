@@ -28,11 +28,11 @@ if len(audio) > 0:
     wav_file = open("myfile.wav", "wb")
     wav_file.write(audio.tobytes())
 
-path = f"{HERE}\\myfile.wav"
-st.write(path)
+    path = f"{HERE}\\myfile.wav"
+    st.write(path)
 
-out = model.transcribe(path)
-st.write(out['text'])
+    out = model.transcribe(path)
+    st.write(out['text'])
 
 audio = st.file_uploader("Upload an audio file", type=["wav"])
 
