@@ -35,7 +35,9 @@ from tempfile import NamedTemporaryFile
 
 import streamlit as st
 import whisper
+
 import ffmpeg
+st.write("ffmpeg imported")
 
 audio = st.file_uploader("Upload an audio file", type=["wav"])
 
