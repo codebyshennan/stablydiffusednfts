@@ -31,7 +31,7 @@ if len(audio) > 0:
     path = f"{HERE}/myfile.wav"
 #     st.write(path)
 
-    out = model.transcribe(path)
+    out = model.transcribe(path, language='en')
     st.write(out['text'])
 
 audio = st.file_uploader("Upload an audio file", type=["wav"])
