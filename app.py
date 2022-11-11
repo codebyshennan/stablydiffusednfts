@@ -23,7 +23,10 @@ audio_bytes = audio_recorder()
 if audio_bytes:
     st.audio(audio_bytes, format="audio/wav")
 
+    st.write("Uploading audio file...")
+
     with open('myfile.wav', mode='bw') as f:
+        print("Creating audio files...")
         f.write(audio_bytes)
     
     path = f"{HERE}\\myfile.wav"
