@@ -1,3 +1,5 @@
+!pip install git+https://github.com/openai/whisper.git 
+
 # import streamlit as st
 # from PIL import Image
 # from audio_recorder_streamlit import audio_recorder
