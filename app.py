@@ -25,8 +25,8 @@ if audio_bytes:
 
  	with open('myfile.wav', mode='bw') as f:
  		f.write(audio_bytes)
-
-	path = f"{HERE}\\myfile.wav"
+        
+        path = f"{HERE}\\myfile.wav"
 
  	st.write(path)
 
