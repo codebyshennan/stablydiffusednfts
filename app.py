@@ -20,21 +20,19 @@ print(HERE)
 
 audio = audiorecorder("Click to record", "Recording...")
 
-if audio:
+if len(audio) > 0:
+    # To play audio in frontend:
+    st.audio(audio)
 
-    if len(audio) > 0:
-        # To play audio in frontend:
-        st.audio(audio)
+    # To save audio to a file:
+    wav_file = open("myfile.wav", "wb")
+    wav_file.write(audio.tobytes())
 
-        # To save audio to a file:
-        wav_file = open("myfile.wav", "wb")
-        wav_file.write(audio.tobytes())
-    
-    path = f"{HERE}\\myfile.wav"
-    st.write(path)
-  
-    out = model.transcribe(path)
-    st.write(out['text'])
+path = f"{HERE}\\myfile.wav"
+st.write(path)
+
+out = model.transcribe(path)
+st.write(out['text'])
 
 audio = st.file_uploader("Upload an audio file", type=["wav"])
 
