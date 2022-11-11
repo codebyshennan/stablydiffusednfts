@@ -42,7 +42,6 @@ if len(audio) > 0:
     wav_file.write(audio.tobytes())
 
     path = f"{HERE}/myfile.wav"
-    st.write(path)
 
-    out = model.transcribe(path)
+    out = model.transcribe(path, language='en')
     st.write(out['text'])
