@@ -18,7 +18,7 @@ st.write("Model loaded!")
 HERE = Path(__file__).parent
 print(HERE)
 
-audio_bytes = audio_recorder()
+#audio_bytes = audio_recorder()
 
 if audio_bytes:
  	st.audio(audio_bytes, format="audio/wav")
@@ -26,12 +26,12 @@ if audio_bytes:
  	with open('myfile.wav', mode='bw') as f:
  		f.write(audio_bytes)
         
-        path = f"{HERE}\\myfile.wav"
+       # path = f"{HERE}\\myfile.wav"
 
- 	st.write(path)
+ 	#st.write(path)
 
- 	out = model.transcribe(path)
- 	st.write(out['text'])
+ 	#out = model.transcribe(path)
+ 	#st.write(out['text'])
 
 audio = st.file_uploader("Upload an audio file", type=["wav"])
 
