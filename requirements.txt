@@ -8,3 +8,4 @@ wordcloud==1.8.2.2
 ffmpeg-python
 audio_recorder_streamlit
 bokeh
+streamlit_bokeh_events
