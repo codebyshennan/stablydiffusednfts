@@ -11,7 +11,7 @@ st.title("Stable Diffusion")
 
 st.write("Loading model...")
 
-model = whisper.load_model("base")
+model = whisper.load_model("tiny")
 
 st.write("Model loaded!")
 
