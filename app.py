@@ -45,6 +45,6 @@ if audio is not None:
     with NamedTemporaryFile(suffix="wav") as temp:
         temp.write(audio.getvalue())
         temp.seek(0)
-        model = whisper.load_model("tiny")
+        model = whisper.load_model("base")
         result = model.transcribe(temp.name)
         st.write(result["text"])
