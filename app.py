@@ -7,7 +7,7 @@ import streamlit as st
 import whisper
 import ffmpeg
 
-st.title("Stable Diffusion")
+st.title("Speech to Stable Diffusion")
 
 st.write("Loading model...")
 
@@ -17,6 +17,19 @@ st.write("Model loaded!")
 
 HERE = Path(__file__).parent
 print(HERE)
+
+st.subheader("Upload Audio")
+
+audio = st.file_uploader("Upload an audio file", type=["wav"])
+
+if audio is not None:
+    with NamedTemporaryFile(suffix="wav") as temp:
+        temp.write(audio.getvalue())
+        temp.seek(0)
+        result = model.transcribe(temp.name)
+        st.write(result["text"])
+
+st.subheader("Record Audio")
 
 audio = audiorecorder("Click to record", "Recording...")
 
@@ -29,16 +42,7 @@ if len(audio) > 0:
     wav_file.write(audio.tobytes())
 
     path = f"{HERE}/myfile.wav"
-#     st.write(path)
+    st.write(path)
 
-    out = model.transcribe(path, language='en')
+    out = model.transcribe(path)
     st.write(out['text'])
-
-audio = st.file_uploader("Upload an audio file", type=["wav"])
-
-if audio is not None:
-    with NamedTemporaryFile(suffix="wav") as temp:
-        temp.write(audio.getvalue())
-        temp.seek(0)
-        result = model.transcribe(temp.name)
-        st.write(result["text"])
