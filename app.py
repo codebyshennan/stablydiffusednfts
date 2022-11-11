@@ -18,7 +18,7 @@ st.write("Model loaded!")
 HERE = Path(__file__).parent
 print(HERE)
 
-#audio_bytes = audio_recorder()
+audio_bytes = audio_recorder()
 
 if audio_bytes:
  	st.audio(audio_bytes, format="audio/wav")
